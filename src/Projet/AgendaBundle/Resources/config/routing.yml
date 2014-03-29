@@ -1,0 +1,11 @@
+projet_agenda_homepage:
+    pattern:  /login
+    defaults: { _controller: ProjetAgendaBundle:Default:index }
+
+projet_agenda_suite:
+    pattern: /suite
+    defaults: { _controller: ProjetAgendaBundle:Default:suite }
+
+projet_agenda_inscription:
+    pattern: /inscription
+    defaults: { _controller: ProjetAgendaBundle:Default:inscription }

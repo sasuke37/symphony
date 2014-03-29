@@ -1,0 +1,16 @@
+Projet\AgendaBundle\Entity\Login:
+    type: entity
+    table: null
+    repositoryClass: Projet\AgendaBundle\Entity\LoginRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        login:
+            type: text
+        passwd:
+            type: text
+    lifecycleCallbacks: {  }

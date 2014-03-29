@@ -1,0 +1,4 @@
+projet_agenda:
+    resource: "@ProjetAgendaBundle/Resources/config/routing.yml"
+    prefix:   /
+
