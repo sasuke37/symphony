@@ -1,0 +1,45 @@
+<html>
+	<head>
+		<title>
+			Planning
+		</title>
+		<meta charset="utf-8">
+		<link rel="stylesheet" href="//code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">
+
+		<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css">
+		<!-- Optional theme -->
+		<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap-theme.min.css">
+		<!-- Latest compiled and minified JavaScript -->
+		<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+
+		<script src="//code.jquery.com/jquery-1.9.1.js"></script>
+		<script src="//code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+		<link rel="stylesheet" href="/resources/demos/style.css">
+		<script>
+			$(function() {
+				$( "#date" ).datepicker({
+					dateFormat: 'yy-mm-dd'
+				});
+			});
+		</script>
+	</head>
+
+	<body>
+		<div class="row">
+			<div class="col-md-12 jumbotron">
+				<center>
+					<h1>Planning
+						<br>
+						<small>
+							Bienvenue {{name}}
+						</small>
+					</h1>
+					<form action="libs/deconnect.php" method="post" >
+						<button type="submit" lass="btn btn-primary">Deconnexion</button>
+					</form>
+				</center>
+			</div>
+		</div>
+
+	</body>
+</html>
