@@ -11,11 +11,9 @@ use Projet\AgendaBundle\Entity\Activity;
 use Projet\AgendaBundle\Entity\Planning;
 
 
-class AgendaController extends Controller
-{
+class AgendaController extends Controller{
 
-    public function agendaAction()
-    {
+    public function agendaAction(){
         $session = new Session();
         $em = $this->getDoctrine()->getEntityManager();
         $session->start();
@@ -30,7 +28,6 @@ class AgendaController extends Controller
         
         $res = $em->getRepository("ProjetAgendaBundle:Planning")->findAll();
 
-        // $interval = new \DateInterval('P1D');
         $demain = clone $today;
         $demain->modify("+ 1 days");
 
@@ -38,25 +35,20 @@ class AgendaController extends Controller
         $tab = array();
         $cptaux = 0;
         foreach ($res as $i) {
-
             if($i->getDate() >= $today && $i->getDate() <= $demain && $i->getIduser() == $user->getId() ){
                 $tab[$cpt]['id'] = $i->getId();
                 $tab[$cpt]['act'] = $em->getRepository("ProjetAgendaBundle:Activity")->find($i->getIdAct())->getNom();
                 $tab[$cpt]['date'] = $i->getDate();
-                $cpt += 1;
+                $cpt = $cpt + 1;
 
             }
 
         }
-
-
-
         return $this->render('ProjetAgendaBundle:Agenda:suite.html.twig', array('user' => $user, 'Activity' => $tab , 'Activ' => $em->getRepository("ProjetAgendaBundle:Activity")->findAll()));
         
     }
 
-    public function ajouterAction()
-    {
+    public function ajouterAction(){
         $session = new Session();
         $session->start();
 
@@ -67,8 +59,7 @@ class AgendaController extends Controller
         $user = $session->get('user');
 
         $request = $this->getRequest();
-        if($request->isMethod('POST'))
-        {
+        if($request->isMethod('POST')){
             $planning = new Planning;
 
             $date = $request->get('date');
@@ -92,8 +83,7 @@ class AgendaController extends Controller
         return $this->redirect($this->generateUrl("projet_agenda_homepage"));
     }
 
-    public function supprimerAction()
-    {
+    public function supprimerAction(){
         $session = new Session();
         $session->start();
 
@@ -104,19 +94,16 @@ class AgendaController extends Controller
         $user = $session->get('user');
 
         $request = $this->getRequest();
-        if($request->isMethod('POST'))  
-        {
+        if($request->isMethod('POST')) {
             $em = $this->getDoctrine()->getManager();
             $id = $request->get('id');
             $entt = $em->getRepository('ProjetAgendaBundle:Planning')->findoneBy(array('id' => $id));
 
-            if($entt)
-            {
+            if($entt){
                 $em->remove($entt);
                 $em->flush();
             }
         }
-
         return $this->redirect($this->generateUrl("projet_agenda_homepage"));
     }
 }
