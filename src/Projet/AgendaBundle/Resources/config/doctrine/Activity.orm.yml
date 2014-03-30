@@ -1,7 +1,6 @@
-Projet\AgendaBundle\Entity\Login:
+Projet\AgendaBundle\Entity\Activity:
     type: entity
     table: null
-    repositoryClass: Projet\AgendaBundle\Entity\LoginRepository
     id:
         id:
             type: integer
@@ -9,8 +8,7 @@ Projet\AgendaBundle\Entity\Login:
             generator:
                 strategy: AUTO
     fields:
-        login:
-            type: text
-        passwd:
-            type: text
+        nom:
+            type: string
+            length: 255
     lifecycleCallbacks: {  }

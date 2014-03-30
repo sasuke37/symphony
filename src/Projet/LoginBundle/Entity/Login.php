@@ -1,30 +1,37 @@
 <?php
 
-namespace Projet\AgendaBundle\Entity;
+namespace Projet\LoginBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * Projet\AgendaBundle\Entity\Login
+ * Login
+ *
  * @ORM\Table()
- * 
+ * @ORM\Entity
  */
 class Login
 {
     /**
      * @var integer
-     *@ORM\Id
-     *@ORM\GeneratedValue(strategy="AUTO")
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
      */
     private $id;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="login", type="string", length=255)
      */
     private $login;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="passwd", type="string", length=255)
      */
     private $passwd;
 

@@ -1,3 +1,7 @@
+projet_login:
+    resource: "@ProjetLoginBundle/Resources/config/routing.yml"
+    prefix:   /
+
 projet_agenda:
     resource: "@ProjetAgendaBundle/Resources/config/routing.yml"
     prefix:   /

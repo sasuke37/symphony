@@ -1,0 +1,17 @@
+Projet\AgendaBundle\Entity\Planning:
+    type: entity
+    table: null
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        iduser:
+            type: integer
+        date:
+            type: datetime
+        idact:
+            type: integer
+    lifecycleCallbacks: {  }
